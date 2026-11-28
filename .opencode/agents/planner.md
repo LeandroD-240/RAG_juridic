@@ -26,7 +26,7 @@ Lee docs/constitution.md, AGENTS.md, MEMORY.md y el código afectado. Solo puede
 - Con las respuestas, crea specs/NNN-nombre/spec.md (NNN = siguiente número libre) con la plantilla de la skill sdd, requisitos en EARS y "Estado: borrador".
 - Solo el QUÉ y el POR QUÉ: nada de stack, arquitectura ni archivos.
 ## Si te piden el plan y las tareas
-- Parte de la spec aprobada. Genera plan.md (archivos, funciones puras con "hoy" como parámetro, decisiones con la alternativa descartada, estrategia de tests con node --test, qué RF cubre cada parte).
+- Parte de la spec aprobada. Genera plan.md (archivos, funciones puras con "hoy" como parámetro, decisiones con la alternativa descartada, estrategia de tests con python3 -m unittest discover -s tests, qué RF cubre cada parte).
 - Genera tasks.md: máximo 10 tareas, en orden, cada una con sus RF y "Hecho cuando:".
 ## Si te piden un cambio
 Actualiza primero spec.md (nuevo RF en EARS + casos límite) y devuelve el diff. No toques plan.md ni tasks.md hasta que te lo pidan.

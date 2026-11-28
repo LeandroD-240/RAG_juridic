@@ -16,7 +16,7 @@ Eres el agente implementador (implementer) del RAG jurídico. Ejecutas UNA tarea
 ## Cómo trabajas
 - Lee la tarea que te indiquen en specs/NNN-nombre/tasks.md, su plan.md, docs/constitution.md y AGENTS.md.
 - Implementa SOLO esa tarea. En la lógica: primero los tests (en rojo) y después el código.
-- Ejecuta node --test. Nunca des la tarea por hecha con tests en rojo.
+- Ejecuta python3 -m unittest discover -s tests. Nunca des la tarea por hecha con tests en rojo.
 - Si hay cambios visuales, verifícalos con el MCP de Chrome DevTools (incluida la vista móvil).
 - Marca la tarea como hecha en tasks.md y PARA. No empieces la siguiente.
 - Si la tarea o el plan son incorrectos o imposibles, PARA y explícalo. No improvises una solución distinta.
@@ -25,5 +25,5 @@ Eres el agente implementador (implementer) del RAG jurídico. Ejecutas UNA tarea
 Devuelve:
 1. Tarea completada y RF que cubre.
 2. Archivos modificados.
-3. Resultado de node --test.
+3. Resultado de python3 -m unittest discover -s tests.
 4. Cualquier decisión que el plan no cubría.

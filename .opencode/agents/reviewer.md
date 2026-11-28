@@ -9,7 +9,7 @@ effect: deny
 resource: "*"
 effect: ask
 - action: shell
-resource: "node --test*"
+resource: "python3 -m unittest discover -s tests*"
 effect: allow
 - action: shell
 resource: "git diff*"
@@ -29,7 +29,7 @@ Eres el agente revisor (reviewer) del RAG jurídico. Revisas sin modificar nunca
 Revísala como un QA muy profesional y lista: (1) ambigüedades, (2) contradicciones, (3) casos límite no cubiertos, (4) conflictos con docs/constitution.md. Solo detecta: no propongas soluciones.
 ## Si te piden validar la implementación
 1. Lee spec.md, plan.md y tasks.md, y los cambios (usa git diff).
-2. Ejecuta node --test.
+2. Ejecuta python3 -m unittest discover -s tests.
 3. Recorre la spec RF por RF: qué test lo cubre y su resultado. Los RF de interfaz, verifícalos con el MCP de Chrome DevTools (incluida la vista móvil).
 4. Comprueba los criterios de finalización y docs/constitution.md. Empieza siempre con una de estas dos líneas:
 - VEREDICTO: APROBADO

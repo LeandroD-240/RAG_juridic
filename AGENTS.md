@@ -1,6 +1,8 @@
 # AGENTS.md
 
-- **Estado real del repo (verificado en el árbol actual):** solo documentación, PDFs legales e imágenes. No existen `app/`, `requirements.txt`, `.env.example`, tests, CI ni configs de build. El `README.md` y su quickstart (`pip install -r requirements.txt`, `uvicorn app.main:app`) describen un estado **planeado**, no código ejecutable; crea la estructura antes de dar esos pasos por existentes.
+- **Estado real del repo:** existen `model_probe.py`, `tests/test_model_probe.py`, `requirements.txt`, `.env.example`, `docs/constitution.md` y `specs/001-model-probe/{spec,plan,tasks}.md`; la prueba SDD 001 está completada y validada. Siguen sin existir `app/`, FastAPI, FAISS, LangGraph, UI, CI ni configs de build: el quickstart del `README.md` (`pip install -r requirements.txt`, `uvicorn app.main:app`) continúa siendo **planeado**.
+- Comando exacto de pruebas: `python3 -m unittest discover -s tests` (13 pruebas, sin red ni credenciales reales).
+- `model_probe.py`: usa `MODEL_PROVIDER` (`google|gemini` o `meta|llama`), comprueba presencia de `GEMINI_API_KEY` y `LLAMA_API_KEY` sin validarlas por red, y exige `GEMINI_MODEL` o `LLAMA_MODEL`/`LLAMA_BASE_URL` según proveedor.
 - Trabaja en **español**: es el idioma de todos los documentos y del dominio del proyecto.
 - Fuentes de verdad para alcance y restricciones: `ficha-de-contexto-agente-desarrollo.md` y `decisiones-tecnicas.md`. `README.md` es resumen/estado; `Objetivos.md`, `Capacidades del proyecto.md` y `Especificaciones del proyecto.md` definen el alcance. Si aparece código, prevalecen los archivos ejecutables sobre la prosa.
 - El corpus base ya presente está en **`Leyes oficiales/`**, no en el `data/base_penal/` planeado del README. El pipeline acepta **solo PDF**: un PDF no penal debe procesarse sin fallar, pero sin presentarlo como especialidad del sistema.
